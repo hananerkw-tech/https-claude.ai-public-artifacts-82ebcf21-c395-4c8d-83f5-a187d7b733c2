@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOBY ENGLISH — Learn English with Confidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --navy-950: #060f1f;
+    --navy-900: #0a1930;
+    --navy-800: #122a4d;
+    --navy-700: #1c3a66;
+    --silver-100: #eef1f5;
+    --silver-300: #c4ccd6;
+    --silver-500: #8f9bab;
+    --accent: #6fa3d8;
+    --accent-bright: #a8cdf0;
+    --success: #7bc9a3;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy-900);
+    color: var(--silver-100);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 25, 48, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 204, 214, 0.12);
+  }
+
+  nav.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 78px;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+  .logo span.mark {
+    color: var(--accent-bright);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--silver-300);
+  }
+  .nav-links a { transition: color 0.2s ease; position: relative; }
+  .nav-links a:hover { color: var(--silver-100); }
+
+  .cta-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, #4d7bab 100%);
+    color: var(--navy-950);
+    font-weight: 600;
+    font-size: 0.86rem;
+    letter-spacing: 0.03em;
+    padding: 11px 24px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 18px rgba(111, 163, 216, 0.25);
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(111, 163, 216, 0.4); }
+
+  .cta-ghost {
+    border: 1px solid rgba(196, 204, 214, 0.35);
+    color: var(--silver-100);
+    background: transparent;
+    padding: 11px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .cta-ghost:hover { border-color: var(--accent-bright); background: rgba(168, 205, 240, 0.08); }
+
+  .mobile-toggle { display: none; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 100px 0 120px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(111,163,216,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px; height: 1px;
+    background: var(--accent-bright);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+  }
+  .hero h1 .fluent {
+    background: linear-gradient(90deg, var(--accent-bright), var(--silver-300));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero p.lead {
+    color: var(--silver-300);
+    font-size: 1.08rem;
+    max-width: 480px;
+    margin-bottom: 34px;
+  }
+
+  .hero-actions { display: flex; gap: 14px; margin-bottom: 44px; }
+
+  .level-strip {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .level-chip {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(196,204,214,0.25);
+    color: var(--silver-500);
+  }
+  .level-chip.active {
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
+    background: rgba(168,205,240,0.08);
+  }
+
+  /* 3D floating book - signature element */
+  .book-scene {
+    perspective: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 10px;
+  }
+
+  .book-3d {
+    position: relative;
+    width: 360px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: bookFloat 7s ease-in-out infinite;
+  }
+
+  @keyframes bookFloat {
+    0%, 100% { transform: rotateX(20deg) rotateY(-22deg) translateY(0px); }
+    50%      { transform: rotateX(15deg) rotateY(-10deg) translateY(-16px); }
+  }
+
+  .book-page {
+    position: absolute;
+    top: 0;
+    width: 178px;
+    height: 250px;
+    background: linear-gradient(135deg, #f6f8fa 0%, #d9dfe6 55%, #c7cfd9 100%);
+    box-shadow: 0 26px 50px rgba(0,0,0,0.45), inset 0 0 30px rgba(10,25,48,0.06);
+  }
+
+  .book-page-left {
+    left: 0;
+    transform-origin: right center;
+    transform: rotateY(7deg);
+    border-radius: 8px 2px 2px 8px;
+  }
+
+  .book-page-right {
+    right: 0;
+    transform-origin: left center;
+    transform: rotateY(-7deg);
+    border-radius: 2px 8px 8px 2px;
+  }
+
+  .flip-page {
+    position: absolute;
+    top: 0;
+    left: 178px;
+    width: 178px;
+    height: 250px;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    animation: flipPage 4.5s ease-in-out infinite;
+  }
+  .flip-page .face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg, #f6f8fa 0%, #d9dfe6 55%, #c7cfd9 100%);
+    border-radius: 2px 8px 8px 2px;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .flip-page .face.back { transform: rotateY(180deg); }
+  .flip-page .face span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(10, 25, 48, 0.18);
+  }
+  .flip-page .face span:nth-child(odd)  { width: 88%; }
+  .flip-page .face span:nth-child(even) { width: 62%; }
+
+  @keyframes flipPage {
+    0%   { transform: rotateY(0deg); }
+    42%  { transform: rotateY(-172deg); }
+    58%  { transform: rotateY(-172deg); }
+    100% { transform: rotateY(0deg); }
+  }
+
+  .book-spine {
+    position: absolute;
+    left: 178px;
+    top: -4px;
+    width: 4px;
+    height: 258px;
+    background: linear-gradient(180deg, var(--accent-bright), var(--navy-700));
+    transform: translateZ(3px);
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+  }
+
+  .book-lines {
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .book-lines span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(10, 25, 48, 0.18);
+  }
+  .book-lines span:nth-child(odd)  { width: 88%; }
+  .book-lines span:nth-child(even) { width: 62%; }
+
+  .book-mark {
+    position: absolute;
+    bottom: 18px;
+    right: 20px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--navy-700);
+    opacity: 0.55;
+  }
+
+  .book-shadow {
+    width: 280px;
+    height: 28px;
+    margin-top: 4px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 72%);
+    filter: blur(5px);
+    animation: shadowPulse 7s ease-in-out infinite;
+  }
+  @keyframes shadowPulse {
+    0%, 100% { transform: scaleX(1); opacity: 0.55; }
+    50%      { transform: scaleX(0.8); opacity: 0.3; }
+  }
+
+  .book-caption {
+    margin-top: 22px;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--silver-500);
+    text-transform: uppercase;
+  }
+
+  /* ---------- Section shared ---------- */
+  section { padding: 100px 0; }
+  .section-head { max-width: 620px; margin-bottom: 56px; }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .section-head p { color: var(--silver-300); font-size: 1.02rem; }
+
+  .alt-bg { background: var(--navy-950); }
+
+  /* ---------- Courses ---------- */
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .course-card {
+    background: var(--navy-800);
+    border: 1px solid rgba(196,204,214,0.12);
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .course-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168,205,240,0.4);
+  }
+  .course-tag {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--navy-950);
+    background: var(--accent-bright);
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+  }
+  .course-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .course-card p {
+    color: var(--silver-300);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+  .course-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--silver-500);
+    border-top: 1px solid rgba(196,204,214,0.12);
+    padding-top: 16px;
+  }
+
+  /* ---------- Why us strip ---------- */
+  .why-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 46px 0;
+    border-top: 1px solid rgba(196,204,214,0.12);
+    border-bottom: 1px solid rgba(196,204,214,0.12);
+  }
+  .why-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+    color: var(--silver-100);
+  }
+  .why-item p { font-size: 0.86rem; color: var(--silver-500); }
+
+  /* ---------- Pricing ---------- */
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .price-card {
+    background: var(--navy-800);
+    border: 1px solid rgba(196,204,214,0.12);
+    border-radius: 16px;
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card.featured {
+    background: linear-gradient(160deg, var(--navy-700), var(--navy-800));
+    border-color: var(--accent-bright);
+    position: relative;
+    box-shadow: 0 20px 50px rgba(111, 163, 216, 0.12);
+  }
+  .price-card.featured::before {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: -12px; left: 28px;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background: var(--accent-bright);
+    color: var(--navy-950);
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+  .price-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .price-card .price {
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--accent-bright);
+    margin: 14px 0 4px;
+  }
+  .price-card .price small {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--silver-500);
+  }
+  .price-card .price-note { font-size: 0.82rem; color: var(--silver-500); margin-bottom: 22px; }
+  .price-card ul { list-style: none; margin-bottom: 26px; flex-grow: 1; }
+  .price-card li {
+    font-size: 0.9rem;
+    color: var(--silver-300);
+    padding: 8px 0;
+    border-top: 1px solid rgba(196,204,214,0.1);
+    display: flex;
+    gap: 10px;
+  }
+  .price-card li:first-child { border-top: none; }
+  .price-card li::before { content: "✓"; color: var(--success); font-weight: 700; }
+
+  .price-note-global {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--silver-500);
+    margin-top: 30px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+  }
+  .contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(196,204,214,0.12);
+  }
+  .contact-row:last-child { border-bottom: 1px solid rgba(196,204,214,0.12); }
+  .contact-row .ic {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    background: rgba(168,205,240,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent-bright);
+    font-size: 1rem;
+  }
+  .contact-row .label { font-size: 0.78rem; color: var(--silver-500); margin-bottom: 2px; }
+  .contact-row .val { font-size: 0.95rem; color: var(--silver-100); }
+
+  form.enroll {
+    background: var(--navy-800);
+    border: 1px solid rgba(196,204,214,0.12);
+    border-radius: 16px;
+    padding: 32px;
+    display: grid;
+    gap: 16px;
+  }
+  form.enroll .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  form.enroll label {
+    font-size: 0.8rem;
+    color: var(--silver-500);
+    margin-bottom: 6px;
+    display: block;
+  }
+  form.enroll input, form.enroll select, form.enroll textarea {
+    width: 100%;
+    background: var(--navy-900);
+    border: 1px solid rgba(196,204,214,0.18);
+    border-radius: 9px;
+    padding: 11px 13px;
+    color: var(--silver-100);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  form.enroll input:focus, form.enroll select:focus, form.enroll textarea:focus {
+    border-color: var(--accent-bright);
+  }
+  form.enroll textarea { resize: vertical; min-height: 90px; }
+  form.enroll button { justify-self: start; margin-top: 4px; }
+
+  .form-status { font-size: 0.85rem; color: var(--success); display: none; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid rgba(196,204,214,0.12);
+    padding: 40px 0;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--silver-500);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px) {
+    .nav-links { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .course-grid, .price-grid { grid-template-columns: 1fr; }
+    .why-strip { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    form.enroll .row2 { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  :focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
+
+  /* ---------- Splash intro ---------- */
+  .splash {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    perspective: 1800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy-950);
+  }
+  .splash-panel {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 50%;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(111,163,216,0.08), transparent 60%),
+      linear-gradient(160deg, var(--navy-900), var(--navy-950));
+    transition: transform 1.15s cubic-bezier(.65,0,.35,1), opacity 1.15s ease;
+    box-shadow: 0 0 80px rgba(0,0,0,0.6);
+  }
+  .splash-panel.left  { left: 0;  transform-origin: left center;  border-right: 1px solid rgba(196,204,214,0.08); }
+  .splash-panel.right { right: 0; transform-origin: right center; border-left: 1px solid rgba(196,204,214,0.08); }
+  .splash.opening { pointer-events: none; }
+  .splash.opening .splash-panel.left  { transform: rotateY(-100deg); }
+  .splash.opening .splash-panel.right { transform: rotateY(100deg); }
+  .splash.hidden { display: none; }
+
+  .splash-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .splash.opening .splash-content { opacity: 0; transform: scale(0.92); }
+
+  .splash-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.3rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  .splash-logo span { color: var(--accent-bright); }
+  .splash-sub {
+    color: var(--silver-500);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  /* ---------- Request box ---------- */
+  .request-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    align-items: center;
+    background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+    border: 1px solid rgba(168, 205, 240, 0.22);
+    border-radius: 20px;
+    padding: 54px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  }
+  .request-left h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .request-left p { color: var(--silver-300); font-size: 0.98rem; }
+
+  .request-form textarea {
+    width: 100%;
+    min-height: 120px;
+    background: var(--navy-900);
+    border: 1px solid rgba(196,204,214,0.2);
+    border-radius: 10px;
+    padding: 14px;
+    color: var(--silver-100);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .request-form textarea:focus { border-color: var(--accent-bright); }
+
+  @media (max-width: 880px) {
+    .request-box { grid-template-columns: 1fr; padding: 34px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="splash" class="splash">
+  <div class="splash-panel left"></div>
+  <div class="splash-panel right"></div>
+  <div class="splash-content">
+    <div class="splash-logo">KOBY<span>.</span>ENGLISH</div>
+    <div class="splash-sub">Language Academy</div>
+    <button id="enterBtn" class="cta-btn">Enter Site</button>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">KOBY<span class="mark">.</span>ENGLISH</div>
+    <div class="nav-links">
+      <a href="#courses">Courses</a>
+      <a href="#why">Why Koby</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="cta-btn">Enroll Now</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">English Language Academy</div>
+      <h1>From your first word<br>to <span class="fluent">fluent</span>, mapped out.</h1>
+      <p class="lead">KOBY ENGLISH is a language academy for every age and every starting point — structured courses, real conversation practice, and a clear path from where you are to where you want to be.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="cta-btn">Book a Free Level Test</a>
+        <a href="#courses" class="cta-ghost">View Courses</a>
+      </div>
+      <div class="level-strip">
+        <span class="level-chip">A1</span>
+        <span class="level-chip">A2</span>
+        <span class="level-chip active">B1</span>
+        <span class="level-chip active">B2</span>
+        <span class="level-chip">C1</span>
+        <span class="level-chip">C2</span>
+      </div>
+    </div>
+
+    <div class="book-scene">
+      <div class="book-3d" aria-hidden="true">
+        <div class="book-page book-page-left">
+          <div class="book-lines">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="book-spine"></div>
+        <div class="book-page book-page-right">
+          <div class="book-lines">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="book-mark">Aa</div>
+        </div>
+        <div class="flip-page">
+          <div class="face front">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="face back">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <div class="book-shadow"></div>
+      <div class="book-caption">Every level, one open book</div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Courses</div>
+      <h2>Pick your track</h2>
+      <p>Every course maps to the CEFR framework, so you always know exactly where you stand and what's next.</p>
+    </div>
+    <div class="course-grid">
+      <div class="course-card reveal">
+        <span class="course-tag">A1 – A2</span>
+        <h3>General English — Foundations</h3>
+        <p>Build core grammar, everyday vocabulary, and speaking confidence from the ground up. Ideal for true beginners of any age.</p>
+        <div class="course-meta"><span>All ages</span><span>Group &amp; Private</span></div>
+      </div>
+      <div class="course-card reveal">
+        <span class="course-tag">B1 – B2</span>
+        <h3>Conversation &amp; Fluency</h3>
+        <p>Move past textbook English. Discussion-driven classes focused on real conversation, listening, and thinking in English.</p>
+        <div class="course-meta"><span>Teens &amp; Adults</span><span>Group &amp; Private</span></div>
+      </div>
+      <div class="course-card reveal">
+        <span class="course-tag">B2 – C1</span>
+        <h3>Business English</h3>
+        <p>Emails, presentations, meetings, negotiation. Professional English for work environments and career growth.</p>
+        <div class="course-meta"><span>Adults</span><span>Private</span></div>
+      </div>
+      <div class="course-card reveal">
+        <span class="course-tag">Exam Prep</span>
+        <h3>IELTS &amp; TOEFL Preparation</h3>
+        <p>Targeted strategy, timed practice tests, and score-focused coaching for study-abroad and work applications.</p>
+        <div class="course-meta"><span>Teens &amp; Adults</span><span>Group &amp; Private</span></div>
+      </div>
+      <div class="course-card reveal">
+        <span class="course-tag">Kids</span>
+        <h3>Young Learners English</h3>
+        <p>Games, songs, and stories that make English a habit, not homework. Built around how children actually learn language.</p>
+        <div class="course-meta"><span>Ages 6–12</span><span>Group</span></div>
+      </div>
+      <div class="course-card reveal">
+        <span class="course-tag">C1 – C2</span>
+        <h3>Advanced Mastery</h3>
+        <p>Nuance, idiom, tone, and precision. For learners polishing near-native fluency for academic or professional use.</p>
+        <div class="course-meta"><span>Adults</span><span>Private</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="alt-bg">
+  <div class="wrap">
+    <div class="why-strip reveal">
+      <div class="why-item">
+        <h4>Small Class Sizes</h4>
+        <p>More speaking time per student, less time waiting to be called on.</p>
+      </div>
+      <div class="why-item">
+        <h4>Level-Based Placement</h4>
+        <p>A short assessment places you on the CEFR scale before day one.</p>
+      </div>
+      <div class="why-item">
+        <h4>Flexible Scheduling</h4>
+        <p>Morning, evening, and weekend slots for students and working adults.</p>
+      </div>
+      <div class="why-item">
+        <h4>Private &amp; Group Options</h4>
+        <p>Learn one-on-one for pace, or in a group for practice and cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Pricing</div>
+      <h2>Simple, level-based pricing</h2>
+      <p>Sample plans below — final pricing can be adjusted per course and class size.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <h3>Group Classes</h3>
+        <div class="price">$40<small>/month</small></div>
+        <div class="price-note">4 sessions · up to 8 students</div>
+        <ul>
+          <li>90-minute weekly sessions</li>
+          <li>Course materials included</li>
+          <li>Progress report each month</li>
+        </ul>
+        <a href="#contact" class="cta-ghost">Choose Plan</a>
+      </div>
+      <div class="price-card featured reveal">
+        <h3>Private Classes</h3>
+        <div class="price">$90<small>/month</small></div>
+        <div class="price-note">4 one-on-one sessions</div>
+        <ul>
+          <li>Fully customized pace &amp; focus</li>
+          <li>Flexible scheduling</li>
+          <li>Direct feedback every session</li>
+          <li>Free level re-assessment</li>
+        </ul>
+        <a href="#contact" class="cta-btn">Choose Plan</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Exam Intensive</h3>
+        <div class="price">$120<small>/month</small></div>
+        <div class="price-note">IELTS / TOEFL · 8 sessions</div>
+        <ul>
+          <li>Full-length practice tests</li>
+          <li>Score-focused strategy</li>
+          <li>Small cohort of max 6</li>
+        </ul>
+        <a href="#contact" class="cta-ghost">Choose Plan</a>
+      </div>
+    </div>
+    <p class="price-note-global">Prices shown are sample placeholders — update them with your real rates before publishing.</p>
+  </div>
+</section>
+
+<section id="requests">
+  <div class="wrap">
+    <div class="request-box reveal">
+      <div class="request-left">
+        <h2>Have a special request?</h2>
+        <p>A custom schedule, a specific teacher, corporate training for your team, or a group of friends learning together — tell us what you need and we'll build a plan around it.</p>
+      </div>
+      <form class="request-form" id="requestForm">
+        <textarea id="requestMsg" placeholder="Tell us what you need..." required></textarea>
+        <button type="submit" class="cta-btn">Send Request</button>
+        <span class="form-status" id="requestStatus">Got it — we'll follow up soon.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt-bg">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Start with a free level test</h2>
+      <p>Tell us a bit about you and we'll place you on the right course.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Get in touch</h3>
+        <div class="contact-row">
+          <div class="ic">☎</div>
+          <div><div class="label">Phone</div><div class="val">Add your phone number</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">✉</div>
+          <div><div class="label">Email</div><div class="val">hello@kobyenglish.com</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">⌖</div>
+          <div><div class="label">Location</div><div class="val">Add your academy address</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ic">⏱</div>
+          <div><div class="label">Hours</div><div class="val">Add your class hours</div></div>
+        </div>
+      </div>
+      <form class="enroll reveal" id="enrollForm">
+        <div class="row2">
+          <div>
+            <label for="fname">First name</label>
+            <input type="text" id="fname" required>
+          </div>
+          <div>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" required>
+          </div>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="row2">
+          <div>
+            <label for="course">Interested course</label>
+            <select id="course">
+              <option>General English — Foundations</option>
+              <option>Conversation &amp; Fluency</option>
+              <option>Business English</option>
+              <option>IELTS &amp; TOEFL Preparation</option>
+              <option>Young Learners English</option>
+              <option>Advanced Mastery</option>
+            </select>
+          </div>
+          <div>
+            <label for="level">Current level</label>
+            <select id="level">
+              <option>Not sure — please assess me</option>
+              <option>A1</option><option>A2</option><option>B1</option>
+              <option>B2</option><option>C1</option><option>C2</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="msg">Message (optional)</label>
+          <textarea id="msg" placeholder="Preferred schedule, questions, etc."></textarea>
+        </div>
+        <button type="submit" class="cta-btn">Request Free Level Test</button>
+        <span class="form-status" id="formStatus">Thanks! We'll be in touch shortly.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 KOBY ENGLISH. All rights reserved.</div>
+    <div>Made for learners of every level.</div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Enroll form (front-end only demo)
+  const form = document.getElementById('enrollForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    status.style.display = 'inline';
+    form.reset();
+    setTimeout(() => { status.style.display = 'none'; }, 4000);
+  });
+
+  // Request box (front-end only demo)
+  const requestForm = document.getElementById('requestForm');
+  const requestStatus = document.getElementById('requestStatus');
+  requestForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    requestStatus.style.display = 'inline';
+    requestForm.reset();
+    setTimeout(() => { requestStatus.style.display = 'none'; }, 4000);
+  });
+
+  // Splash intro — opening sound + door-style reveal
+  const splash = document.getElementById('splash');
+  const enterBtn = document.getElementById('enterBtn');
+  document.body.style.overflow = 'hidden';
+
+  function playOpenChime() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const now = ctx.currentTime;
+      const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
+      notes.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        const start = now + i * 0.09;
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(0.16, start + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.9);
+        osc.connect(gain).connect(ctx.destination);
+        osc.start(start);
+        osc.stop(start + 0.95);
+      });
+    } catch (e) { /* audio not available */ }
+  }
+
+  enterBtn.addEventListener('click', function() {
+    playOpenChime();
+    splash.classList.add('opening');
+    document.body.style.overflow = '';
+    setTimeout(() => { splash.classList.add('hidden'); }, 1200);
+  });
+
+</script>
+
+</body>
+</html>
